@@ -81,11 +81,9 @@ class MainActivity : ComponentActivity() {
         findViewById<ViewGroup>(android.R.id.content)
             ?.let { viewGroup ->
                 val composeView = ComposeView(viewGroup.context).apply {
-                    ComposeView(viewGroup.context).apply {
-                        setViewCompositionStrategy(
-                            ViewCompositionStrategy.DisposeOnDetachedFromWindow
-                        )
-                    }
+                    setViewCompositionStrategy(
+                        ViewCompositionStrategy.DisposeOnDetachedFromWindow
+                    )
                     setContent {
                         val navController = rememberNavController()
                         NavHost(navController, startDestination = DEFAULT_DESTINATION) {
